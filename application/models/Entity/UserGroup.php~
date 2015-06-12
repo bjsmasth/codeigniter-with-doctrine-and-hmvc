@@ -1,0 +1,66 @@
+<?php
+
+namespace Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserGroup
+ *
+ * @ORM\Table(name="user_group", uniqueConstraints={@ORM\UniqueConstraint(name="0", columns={"name"})})
+ * @ORM\Entity
+ */
+class UserGroup
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=32, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return UserGroup
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

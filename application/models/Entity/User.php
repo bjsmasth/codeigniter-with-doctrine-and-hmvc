@@ -90,7 +90,7 @@ class User
     
         return $this;
     }
-
+ 
     /**
      * Get password
      *
